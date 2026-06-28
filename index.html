@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Mi Doc ❤️🩺 | My Love Dashboard</title>
+
+  <link rel="stylesheet" href="style.css" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&family=Nunito:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  >
+</head>
+
+<body>
+  <main class="page">
+
+    <!-- PANTALLA 1: INICIO -->
+    <section id="inicio" class="screen hero-screen">
+      <div class="screen-card hero-card">
+        <p class="eyebrow">Inicio de nuestro recorrido</p>
+
+        <h1>Mi Doc ❤️🩺</h1>
+
+        <p class="hero-subtitle">
+          Un pequeño sistema para guardar nuestros tres meses.
+        </p>
+
+        <div class="hero-tags">
+          <span>Nuestro primer momento: 30/03/2026</span>
+          <span>Estado: En producción continua contigo</span>
+          <span>Versión: 3.0 meses</span>
+        </div>
+
+        <div class="home-grid">
+          <div class="home-counter">
+            <p class="mini-title">Tiempo desde que empezó nuestra historia</p>
+
+            <div class="counter-grid compact">
+              <div>
+                <strong id="counterDays">0</strong>
+                <span>días</span>
+              </div>
+              <div>
+                <strong id="counterHours">0</strong>
+                <span>horas</span>
+              </div>
+              <div>
+                <strong id="counterMinutes">0</strong>
+                <span>minutos</span>
+              </div>
+              <div>
+                <strong id="counterSeconds">0</strong>
+                <span>segundos</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="daily-card">
+            <div class="daily-top">
+              <p class="mini-title">Daily message</p>
+              <span id="todayDate">Hoy</span>
+            </div>
+
+            <p id="dailyMessage">
+              Cargando mensaje...
+            </p>
+          </div>
+        </div>
+
+        <div class="button-row">
+          <a href="#dashboard" class="main-button">Iniciar recorrido</a>
+          <a href="#recuerdos" class="ghost-button">Ver recuerdos</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- PANTALLA 2: DASHBOARD -->
+    <section id="dashboard" class="screen">
+      <div class="screen-card">
+        <p class="eyebrow">Nuestro espacio</p>
+
+        <h2>Nuestro dashboard</h2>
+
+        <p class="screen-intro">
+          Desde el 30 de marzo de 2026, para mí dejó de ser una fecha normal
+          y empezó a convertirse en el inicio de algo mucho más hermoso, más bonito
+          y más especial de lo que imaginaba.
+        </p>
+
+        <div class="kpi-grid">
+          <article class="kpi-card">
+            <span>Días juntos</span>
+            <strong id="daysTogether">0</strong>
+            <small>desde el inicio</small>
+          </article>
+
+          <article class="kpi-card">
+            <span>Meses juntos</span>
+            <strong>3</strong>
+            <small>y sumando</small>
+          </article>
+
+          <article class="kpi-card">
+            <span>Recuerdos visuales</span>
+            <strong>5</strong>
+            <small>únicos</small>
+          </article>
+
+          <article class="kpi-card">
+            <span>Estado del corazón</span>
+            <strong>Activo</strong>
+            <small>sin incidencias</small>
+          </article>
+        </div>
+
+        <div class="soft-note">
+          <p>
+            No todo lo bonito se puede medir, pero quería guardar en este espacio
+            algunos detalles que significan mucho para mí.
+          </p>
+        </div>
+
+        <div class="button-row center">
+          <a href="#inicio" class="ghost-button">Volver al inicio</a>
+          <a href="#recuerdos" class="main-button">Continuar</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- PANTALLA 3: RECUERDOS EN CARRUSEL -->
+    <section id="recuerdos" class="screen">
+      <div class="screen-card memories-card">
+        <p class="eyebrow">Memory timeline</p>
+
+        <h2>Nuestros recuerdos</h2>
+
+        <p class="screen-intro">
+          No son todos los momentos que quiero vivir contigo,
+          pero sí algunos de los que más guardo en mi corazón.
+        </p>
+
+        <div class="carousel">
+
+          <!-- SLIDE 1 -->
+          <article class="memory-slide active">
+            <div class="image-frame locked" id="memoryImage1">
+              <img
+                src="assets/foto-01-flores.jpg"
+                alt="Tú con tus flores amarillas"
+                onclick="openImageIfUnlocked(1, 'assets/foto-01-flores.jpg', 'Tú con tus flores amarillas')"
+              >
+
+              <div class="unlock-layer">
+                <div class="lock-icon">🔒</div>
+                <p>Desbloquéame con un beso</p>
+                <button type="button" onclick="unlockMemory(event, 1)">
+                  Dame 1 beso ❤️
+                </button>
+              </div>
+            </div>
+
+            <div class="memory-text">
+              <h3>Tú con tus flores amarillas</h3>
+              <p>
+                Nunca antes había regalado flores a una persona, y tú fuiste mi primera inspiración para hacerlo.
+                No te voy a negar que me sentí muy nervioso al dártelas, pero también muy feliz.
+                Ese momento siempre va a ser importante para mí, porque me encanta verte sonreír,
+                me encanta verte feliz, y en la medida de lo posible siempre voy a querer engreírte,
+                cuidarte y darte detalles que alegren tu corazón.
+              </p>
+            </div>
+          </article>
+
+          <!-- SLIDE 2 -->
+          <article class="memory-slide">
+            <div class="image-frame locked" id="memoryImage2">
+              <img
+                src="assets/foto-02-casa.jpg"
+                alt="Los besos tuyos"
+                onclick="openImageIfUnlocked(2, 'assets/foto-02-casa.jpg', 'Los besos tuyos')"
+              >
+
+              <div class="unlock-layer">
+                <div class="lock-icon">🔒</div>
+                <p>Desbloquéame con dos besos</p>
+                <button type="button" onclick="unlockMemory(event, 2)">
+                  Dame 2 besos ❤️
+                </button>
+              </div>
+            </div>
+
+            <div class="memory-text">
+              <h3>Los besos tuyos</h3>
+              <p>
+                Tú eres la persona que me da calma, paz y armonía.
+                Contigo siento que puedo ser yo mismo, sin miedos, sin filtros y con el corazón tranquilo.
+                Cada instante a tu lado tiene algo especial, y cada momento contigo se vuelve de los más hermosos que me ha dado la vida.
+                Estar cerca de ti me hace sentir bien, me llena el corazón y me recuerda lo bonito que es coincidir con alguien así.
+              </p>
+            </div>
+          </article>
+
+          <!-- SLIDE 3 -->
+          <article class="memory-slide">
+            <div class="image-frame locked" id="memoryImage3">
+              <img
+                src="assets/foto-03-evento.jpg"
+                alt="Nuestro primer evento juntos"
+                onclick="openImageIfUnlocked(3, 'assets/foto-03-evento.jpg', 'Nuestro primer evento juntos')"
+              >
+
+              <div class="unlock-layer">
+                <div class="lock-icon">🔒</div>
+                <p>Desbloquéame con tres besos</p>
+                <button type="button" onclick="unlockMemory(event, 3)">
+                  Dame 3 besos ❤️
+                </button>
+              </div>
+            </div>
+
+            <div class="memory-text">
+              <h3>Nuestro primer evento juntos</h3>
+              <p>
+                Este recuerdo me encanta porque fue hermoso compartir algo que nos agrada a los dos.
+                Poder reírnos juntos, disfrutar algo que nos fascina y vivir ese momento lado a lado
+                hizo que todo se sintiera aún más especial.
+                Ese día, entre sonrisas, complicidad y pequeños detalles, siento que también nos ayudó a unirnos más
+                y a seguir construyendo algo bonito entre nosotros.
+              </p>
+            </div>
+          </article>
+
+          <!-- SLIDE 4 -->
+          <article class="memory-slide">
+            <div class="image-frame locked" id="memoryImage4">
+              <img
+                src="assets/foto-04-graduacion.jpg"
+                alt="El día de mi graduación"
+                onclick="openImageIfUnlocked(4, 'assets/foto-04-graduacion.jpg', 'El día de mi graduación')"
+              >
+
+              <div class="unlock-layer">
+                <div class="lock-icon">🔒</div>
+                <p>Desbloquéame con cuatro besos</p>
+                <button type="button" onclick="unlockMemory(event, 4)">
+                  Dame 4 besos ❤️
+                </button>
+              </div>
+            </div>
+
+            <div class="memory-text">
+              <h3>El día de mi graduación</h3>
+              <p>
+                Gracias por ser parte de los momentos más bonitos de mi vida, porque de alguna forma tú también eres uno de esos momentos.
+                Verte presente en una etapa tan importante para mí, como lo es mi crecimiento profesional,
+                hizo que ese día se volviera aún más valioso.
+                Siempre te voy a agradecer por estar ahí, por permitirme verte ese día y por acompañarme,
+                porque más allá de que fuera una fecha especial para mí, también fue un día en el que pude compartir contigo
+                algo que significa mucho en mi vida.
+              </p>
+            </div>
+          </article>
+
+          <!-- SLIDE 5 -->
+          <article class="memory-slide">
+            <div class="image-frame locked" id="memoryImage5">
+              <img
+                src="assets/foto-05-especial.jpg"
+                alt="Tú"
+                onclick="openImageIfUnlocked(5, 'assets/foto-05-especial.jpg', 'Tú')"
+              >
+
+              <div class="unlock-layer">
+                <div class="lock-icon">🔒</div>
+                <p>Desbloquéame con cinco besos</p>
+                <button type="button" onclick="unlockMemory(event, 5)">
+                  Dame 5 besos ❤️
+                </button>
+              </div>
+            </div>
+
+            <div class="memory-text">
+              <h3>Tú</h3>
+              <p>
+                Tú sabes cuánto amo esta imagen, porque fue uno de los primeros contactos visuales que tuve de ti
+                después de que nos habíamos encontrado en el pueblito.
+                Esta imagen refleja demasiado de lo que siento por ti.
+                Creo que no hay otra imagen que haya visto tantas veces como esta, sobre todo en los días en los que no estamos juntos
+                o en esos momentos en los que simplemente quiero verte y sentirte cerquita, aunque sea en una foto.
+                Eres mi fortaleza, eres mi motor para seguir creciendo día a día,
+                y muchas veces también eres esa calma que me ayuda cuando algo no va del todo bien.
+              </p>
+            </div>
+          </article>
+
+          <!-- SLIDE 6 -->
+          <article class="memory-slide future-slide">
+            <div class="future-content">
+              <p class="future-label">Lo que viene</p>
+              <h3>Se vienen más recuerdos contigo ❤️</h3>
+              <p>
+                Y si estos primeros meses ya me regalaron tantos momentos bonitos,
+                no puedo dejar de ilusionarme con todo lo que todavía nos falta vivir,
+                reír, abrazar, descubrir y recordar juntos.
+              </p>
+            </div>
+          </article>
+
+        </div>
+
+        <div class="carousel-controls">
+          <button onclick="prevSlide()">← Anterior</button>
+
+          <div class="dots">
+            <button class="dot active" onclick="goToSlide(0)"></button>
+            <button class="dot" onclick="goToSlide(1)"></button>
+            <button class="dot" onclick="goToSlide(2)"></button>
+            <button class="dot" onclick="goToSlide(3)"></button>
+            <button class="dot" onclick="goToSlide(4)"></button>
+            <button class="dot" onclick="goToSlide(5)"></button>
+          </div>
+
+          <button onclick="nextSlide()">Siguiente →</button>
+        </div>
+
+        <div class="button-row center">
+          <a href="#inicio" class="ghost-button">Volver al inicio</a>
+          <a href="#carta" class="main-button">Ver carta</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- PANTALLA 4: CARTA -->
+    <section id="carta" class="screen">
+      <div class="screen-card letter-screen-card">
+        <p class="eyebrow">Para abrir despacito</p>
+
+        <h2>Hay una carta guardada para ti</h2>
+
+        <p class="screen-intro">
+          No aparece de frente porque hay cosas bonitas que merecen abrirse con calma.
+        </p>
+
+        <button class="main-button as-button" onclick="openLetter()">
+          Abrir carta
+        </button>
+
+        <div class="button-row center">
+          <a href="#inicio" class="ghost-button">Volver al inicio</a>
+          <a href="#detalle-final" class="main-button">Detalle final</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- MODAL CARTA -->
+    <div id="letterModal" class="letter-modal">
+      <div class="modal-overlay" onclick="closeLetter()"></div>
+
+      <div class="storybook-letter">
+        <button class="close-button" onclick="closeLetter()">×</button>
+
+        <p class="letter-label">Carta privada</p>
+
+        <h2>Para mi Doc ❤️</h2>
+
+        <p>
+          Mi Doc, no soy mucho de hacer manualidades, pero sí quería construirte algo que se parezca a mí:
+          algo hecho con paciencia, con intención, con cariño y con mucho corazón.
+        </p>
+
+        <p>
+          Tal vez esta página no pueda explicar todo lo que siento, pero sí puede guardar una parte de lo bonito
+          que han sido estos tres meses contigo. Desde el 30 de marzo de 2026, hay una fecha que se volvió especial para mí.
+        </p>
+
+        <p>
+          Gracias por estar, por acompañarme, por regalarme tranquilidad, por tus detalles,
+          por tus ojos, por tu sonrisa y por hacer que incluso los días simples se sientan mucho más bonitos.
+        </p>
+
+        <p>
+          Si esta historia sigue escribiéndose, me hace feliz pensar que todavía se vienen más recuerdos,
+          más salidas, más risas y más momentos contigo.
+        </p>
+
+        <p class="letter-signature">
+          Felices tres meses, mi Doc ❤️<br>
+          — Arturo
+        </p>
+      </div>
+    </div>
+
+    <!-- MODAL IMAGEN -->
+    <div id="imageModal" class="image-modal">
+      <div class="modal-overlay" onclick="closeImage()"></div>
+
+      <div class="image-viewer">
+        <button class="close-image-button" onclick="closeImage()">×</button>
+        <img id="modalImage" src="" alt="Imagen ampliada">
+        <p id="modalCaption"></p>
+      </div>
+    </div>
+
+    <!-- PANTALLA 5: DETALLE FINAL -->
+    <section id="detalle-final" class="screen">
+      <div class="screen-card final-card">
+        <p class="eyebrow">Un último detalle</p>
+
+        <h2>Para que este recuerdo también exista fuera de la pantalla</h2>
+
+        <p class="screen-intro">
+          Cuando esta web esté publicada, puedes convertir el enlace en un QR
+          y ponerlo en una tarjetita pequeña.
+        </p>
+
+        <div class="qr-placeholder">
+          QR
+        </div>
+
+        <p class="qr-note">
+          “Mi Doc ❤️, te construí algo. Escanéalo cuando estés tranquila.”
+        </p>
+
+        <div class="button-row center">
+          <a href="#inicio" class="ghost-button">Volver al inicio</a>
+          <a href="#recuerdos" class="main-button">Ver recuerdos otra vez</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

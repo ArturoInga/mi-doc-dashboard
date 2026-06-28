@@ -17,10 +17,10 @@
 </head>
 
 <body>
-  <main class="page">
+  <main class="app">
 
     <!-- PANTALLA 1: INICIO -->
-    <section id="inicio" class="screen hero-screen">
+    <section id="inicio" class="screen active">
       <div class="screen-card hero-card">
         <p class="eyebrow">Inicio de nuestro recorrido</p>
 
@@ -73,8 +73,13 @@
         </div>
 
         <div class="button-row">
-          <a href="#dashboard" class="main-button">Iniciar recorrido</a>
-          <a href="#recuerdos" class="ghost-button">Ver recuerdos</a>
+          <button class="main-button" type="button" onclick="navigateTo('dashboard')">
+            Iniciar recorrido
+          </button>
+
+          <button class="ghost-button" type="button" onclick="navigateTo('recuerdos')">
+            Ver recuerdos
+          </button>
         </div>
       </div>
     </section>
@@ -126,8 +131,13 @@
         </div>
 
         <div class="button-row center">
-          <a href="#inicio" class="ghost-button">Volver al inicio</a>
-          <a href="#recuerdos" class="main-button">Continuar</a>
+          <button class="ghost-button" type="button" onclick="navigateTo('inicio')">
+            Volver al inicio
+          </button>
+
+          <button class="main-button" type="button" onclick="navigateTo('recuerdos')">
+            Continuar
+          </button>
         </div>
       </div>
     </section>
@@ -139,7 +149,7 @@
 
         <h2>Nuestros recuerdos</h2>
 
-        <p class="screen-intro">
+        <p class="screen-intro memories-intro">
           No son todos los momentos que quiero vivir contigo,
           pero sí algunos de los que más guardo en mi corazón.
         </p>
@@ -314,23 +324,28 @@
         </div>
 
         <div class="carousel-controls">
-          <button onclick="prevSlide()">← Anterior</button>
+          <button type="button" onclick="prevSlide()">← Anterior</button>
 
           <div class="dots">
-            <button class="dot active" onclick="goToSlide(0)"></button>
-            <button class="dot" onclick="goToSlide(1)"></button>
-            <button class="dot" onclick="goToSlide(2)"></button>
-            <button class="dot" onclick="goToSlide(3)"></button>
-            <button class="dot" onclick="goToSlide(4)"></button>
-            <button class="dot" onclick="goToSlide(5)"></button>
+            <button class="dot active" type="button" onclick="goToSlide(0)"></button>
+            <button class="dot" type="button" onclick="goToSlide(1)"></button>
+            <button class="dot" type="button" onclick="goToSlide(2)"></button>
+            <button class="dot" type="button" onclick="goToSlide(3)"></button>
+            <button class="dot" type="button" onclick="goToSlide(4)"></button>
+            <button class="dot" type="button" onclick="goToSlide(5)"></button>
           </div>
 
-          <button onclick="nextSlide()">Siguiente →</button>
+          <button type="button" onclick="nextSlide()">Siguiente →</button>
         </div>
 
-        <div class="button-row center">
-          <a href="#inicio" class="ghost-button">Volver al inicio</a>
-          <a href="#carta" class="main-button">Ver carta</a>
+        <div class="button-row center memory-buttons">
+          <button class="ghost-button" type="button" onclick="navigateTo('inicio')">
+            Volver al inicio
+          </button>
+
+          <button class="main-button" type="button" onclick="navigateTo('carta')">
+            Ver carta
+          </button>
         </div>
       </div>
     </section>
@@ -346,13 +361,18 @@
           No aparece de frente porque hay cosas bonitas que merecen abrirse con calma.
         </p>
 
-        <button class="main-button as-button" onclick="openLetter()">
+        <button class="main-button as-button" type="button" onclick="openLetter()">
           Abrir carta
         </button>
 
         <div class="button-row center">
-          <a href="#inicio" class="ghost-button">Volver al inicio</a>
-          <a href="#detalle-final" class="main-button">Detalle final</a>
+          <button class="ghost-button" type="button" onclick="navigateTo('inicio')">
+            Volver al inicio
+          </button>
+
+          <button class="main-button" type="button" onclick="navigateTo('detalle-final')">
+            Detalle final
+          </button>
         </div>
       </div>
     </section>
@@ -362,36 +382,38 @@
       <div class="modal-overlay" onclick="closeLetter()"></div>
 
       <div class="storybook-letter">
-        <button class="close-button" onclick="closeLetter()">×</button>
+        <button class="close-button" type="button" onclick="closeLetter()">×</button>
 
-        <p class="letter-label">Carta privada</p>
+        <div class="letter-content">
+          <p class="letter-label">Carta privada</p>
 
-        <h2>Para mi Doc ❤️</h2>
+          <h2>Para mi Doc ❤️</h2>
 
-        <p>
-          Mi Doc, no soy mucho de hacer manualidades, pero sí quería construirte algo que se parezca a mí:
-          algo hecho con paciencia, con intención, con cariño y con mucho corazón.
-        </p>
+          <p>
+            Mi Doc, no soy mucho de hacer manualidades, pero sí quería construirte algo que se parezca a mí:
+            algo hecho con paciencia, con intención, con cariño y con mucho corazón.
+          </p>
 
-        <p>
-          Tal vez esta página no pueda explicar todo lo que siento, pero sí puede guardar una parte de lo bonito
-          que han sido estos tres meses contigo. Desde el 30 de marzo de 2026, hay una fecha que se volvió especial para mí.
-        </p>
+          <p>
+            Tal vez esta página no pueda explicar todo lo que siento, pero sí puede guardar una parte de lo bonito
+            que han sido estos tres meses contigo. Desde el 30 de marzo de 2026, hay una fecha que se volvió especial para mí.
+          </p>
 
-        <p>
-          Gracias por estar, por acompañarme, por regalarme tranquilidad, por tus detalles,
-          por tus ojos, por tu sonrisa y por hacer que incluso los días simples se sientan mucho más bonitos.
-        </p>
+          <p>
+            Gracias por estar, por acompañarme, por regalarme tranquilidad, por tus detalles,
+            por tus ojos, por tu sonrisa y por hacer que incluso los días simples se sientan mucho más bonitos.
+          </p>
 
-        <p>
-          Si esta historia sigue escribiéndose, me hace feliz pensar que todavía se vienen más recuerdos,
-          más salidas, más risas y más momentos contigo.
-        </p>
+          <p>
+            Si esta historia sigue escribiéndose, me hace feliz pensar que todavía se vienen más recuerdos,
+            más salidas, más risas y más momentos contigo.
+          </p>
 
-        <p class="letter-signature">
-          Felices tres meses, mi Doc ❤️<br>
-          — Arturo
-        </p>
+          <p class="letter-signature">
+            Felices tres meses, mi Doc ❤️<br>
+            — Arturo
+          </p>
+        </div>
       </div>
     </div>
 
@@ -400,35 +422,68 @@
       <div class="modal-overlay" onclick="closeImage()"></div>
 
       <div class="image-viewer">
-        <button class="close-image-button" onclick="closeImage()">×</button>
+        <button class="close-image-button" type="button" onclick="closeImage()">×</button>
         <img id="modalImage" src="" alt="Imagen ampliada">
         <p id="modalCaption"></p>
       </div>
     </div>
 
-    <!-- PANTALLA 5: DETALLE FINAL -->
+    <!-- PANTALLA 5: HISTORIA FINAL -->
     <section id="detalle-final" class="screen">
       <div class="screen-card final-card">
         <p class="eyebrow">Un último detalle</p>
 
-        <h2>Para que este recuerdo también exista fuera de la pantalla</h2>
+        <h2>La historia de una mujer valiente</h2>
 
-        <p class="screen-intro">
-          Cuando esta web esté publicada, puedes convertir el enlace en un QR
-          y ponerlo en una tarjetita pequeña.
-        </p>
+        <div class="final-story-layout">
+          <div class="story-copy">
+            <p>
+              Hay cuentos donde las princesas esperan ser salvadas, pero también existen historias mucho más bonitas:
+              aquellas donde una mujer aprende a levantarse sola, a curar sus propias heridas y a seguir caminando
+              incluso cuando el mundo no fue justo con ella.
+            </p>
 
-        <div class="qr-placeholder">
-          QR
+            <p>
+              En algunos relatos hay castillos, bosques, mares, lámparas, vestidos y coronas. Pero en esta historia,
+              lo más importante no es una corona, sino su corazón. Un corazón que, aun después de haber pasado por días difíciles,
+              sigue teniendo la fuerza de sonreír, de avanzar, de cuidar y de volver a creer.
+            </p>
+
+            <p>
+              Ella no necesita magia para brillar, porque su valentía ya es una forma de magia. Ha tenido momentos que pudieron apagarla,
+              pero eligió seguir. Ha tenido heridas que pudieron detenerla, pero eligió crecer. Y aunque quizá no siempre lo vea,
+              hay una luz en ella que se nota incluso en silencio.
+            </p>
+
+            <p>
+              Para mí, ella es esa princesa que no solo se ve bonita en una historia: es la que inspira, la que lucha,
+              la que se reconstruye, la que sueña, la que estudia, la que sana y la que demuestra que la verdadera belleza
+              también está en la fuerza con la que una persona decide no rendirse.
+            </p>
+          </div>
+
+          <div class="doctor-illustration-card">
+            <img
+              src="assets/doctorane.png"
+              alt="Doctora ilustrada de cabello negro"
+              onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';"
+            >
+
+            <div class="doctor-fallback">
+              <span>🩺</span>
+              <p>Agrega aquí tu ilustración de doctora anime</p>
+            </div>
+          </div>
         </div>
 
-        <p class="qr-note">
-          “Mi Doc ❤️, te construí algo. Escanéalo cuando estés tranquila.”
-        </p>
-
         <div class="button-row center">
-          <a href="#inicio" class="ghost-button">Volver al inicio</a>
-          <a href="#recuerdos" class="main-button">Ver recuerdos otra vez</a>
+          <button class="ghost-button" type="button" onclick="navigateTo('inicio')">
+            Volver al inicio
+          </button>
+
+          <button class="main-button" type="button" onclick="navigateTo('recuerdos')">
+            Ver recuerdos otra vez
+          </button>
         </div>
       </div>
     </section>

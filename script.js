@@ -23,6 +23,27 @@ const dailyMessages = [
 ];
 
 // ===============================
+// NAVEGACIÓN TIPO APP
+// ===============================
+
+function navigateTo(screenId) {
+  const screens = document.querySelectorAll(".screen");
+
+  screens.forEach((screen) => {
+    screen.classList.remove("active");
+  });
+
+  const targetScreen = document.getElementById(screenId);
+
+  if (targetScreen) {
+    targetScreen.classList.add("active");
+  }
+
+  closeLetter();
+  closeImage();
+}
+
+// ===============================
 // CONTADOR
 // ===============================
 
@@ -152,7 +173,11 @@ function openLetter() {
 }
 
 function closeLetter() {
-  document.getElementById("letterModal").classList.remove("active");
+  const letterModal = document.getElementById("letterModal");
+
+  if (letterModal) {
+    letterModal.classList.remove("active");
+  }
 }
 
 // ===============================
@@ -166,16 +191,28 @@ function openImage(src, caption) {
 }
 
 function closeImage() {
-  document.getElementById("imageModal").classList.remove("active");
+  const imageModal = document.getElementById("imageModal");
+
+  if (imageModal) {
+    imageModal.classList.remove("active");
+  }
 }
 
 // ===============================
-// CERRAR MODALES CON ESC
+// TECLADO
 // ===============================
 
 document.addEventListener("keydown", function(event) {
   if (event.key === "Escape") {
     closeLetter();
     closeImage();
+  }
+
+  if (event.key === "ArrowRight") {
+    nextSlide();
+  }
+
+  if (event.key === "ArrowLeft") {
+    prevSlide();
   }
 });
